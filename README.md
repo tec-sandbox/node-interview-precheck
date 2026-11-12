@@ -60,9 +60,3 @@ The script also checks whether the VS Code command-line tool is available, but *
 ## Troubleshooting
 
 See [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) for help with common issues, including Docker Desktop not running and local port 55432 already in use.
-
-## For interview organizers
-
-This repository can be **public** because it contains no interview exercises or solutions. Keep the actual technical challenge in a separate repository and do not share it before the interview.
-
-Before sharing the precheck, run `npm install` on an Internet-connected machine with Node.js 26 and commit the generated `package-lock.json` so installations are reproducible. Run the full `npm run check` on a machine with Node.js 26 and Docker to validate the setup end to end.
