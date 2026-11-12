@@ -1,0 +1,20 @@
+# Temporary, isolated database for the environment precheck only.
+# Bound to 127.0.0.1 only (not accessible from the network).
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: precheck
+      POSTGRES_USER: precheck
+      POSTGRES_PASSWORD: precheck_only_local
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "127.0.0.1:55432:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U precheck -d precheck"]
+      interval: 2s
+      timeout: 3s
+      retries: 25
+      start_period: 4s

@@ -1,0 +1,29 @@
+{
+  "name": "node-interview-precheck",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pre-interview environment check for Node.js 26, NestJS 11, TypeScript 5.9, TypeORM 0.3, Docker, and PostgreSQL",
+  "engines": {
+    "node": ">=26.0.0 <27.0.0"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "test:runner": "node --test scripts/check.test.mjs"
+  },
+  "dependencies": {
+    "@nestjs/common": "11.1.6",
+    "@nestjs/core": "11.1.6",
+    "@nestjs/platform-express": "11.1.6",
+    "@nestjs/typeorm": "11.0.0",
+    "pg": "^8.16.3",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "typeorm": "0.3.25"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "typescript": "5.9.2"
+  }
+}
